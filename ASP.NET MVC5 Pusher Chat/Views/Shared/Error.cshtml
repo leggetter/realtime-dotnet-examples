@@ -1,0 +1,27 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    Layout = "_Layout.cshtml";
+    ViewBag.Title = "Error";
+}
+
+
+
+<div>
+    <h3>An unexpected error has occurred. <small class="text-danger">Please contact the system administrator.</small></h3>
+    @if (Model != null && HttpContext.Current.IsDebuggingEnabled)
+    {
+        <div>
+            <p>
+                <h4>Exception: <small>@Model.Exception.Message</small></h4>
+                <h4>Controller: <small>@Model.ControllerName</small></h4>
+                <h4>Action: <small>@Model.ActionName</small></h4>
+            </p>
+            <div class="pre-scrollable">
+                <pre>
+                    @Model.Exception.StackTrace
+                </pre>
+            </div>
+        </div>
+    }
+</div>
