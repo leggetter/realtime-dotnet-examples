@@ -90,7 +90,7 @@ AbstractChat.prototype._sendMessage = function () {
     // Build POST data and make AJAX request
     var data = {
         username: this.twitterUsername,
-        chat_text: messageText
+        text: messageText
     };
     this.sendMessage(data);
 

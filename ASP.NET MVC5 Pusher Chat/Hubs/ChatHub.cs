@@ -17,12 +17,21 @@ namespace ASP.NET_MVC5_Pusher_Chat.Hubs
             this.repo = new ChatRepository();
         }
 
+        /// <summary>
+        /// Incoming message from a client. Sends the message to all clients.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="text"></param>
         public void Send(string name, string text)
         {
             var message = this.repo.CreateMessage(name, text);
             Clients.All.newMessage(message);
         }
 
+        /// <summary>
+        /// Gets all the existing messages.
+        /// </summary>
+        /// <returns></returns>
         public List<Message> GetAll()
         {
             return repo.GetAll();

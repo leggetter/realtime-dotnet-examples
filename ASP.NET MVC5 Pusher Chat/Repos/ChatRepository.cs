@@ -25,6 +25,11 @@ namespace ASP.NET_MVC5_Pusher_Chat.Repos
             var message = new Message();
             message.text = text;
             message.username = username;
+            return this.CreateMessage(message);
+        }
+
+        public Message CreateMessage(Message message)
+        {
             message.created = DateTime.Now;
             message = this._entities.Messages.Add(message);
             this._entities.SaveChanges();

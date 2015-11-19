@@ -8,3 +8,5 @@
 /// <reference path="jquery.signalr-2.2.0.min.js" />
 /// <reference path="chat/abstractchat.js" />
 /// <reference path="chat/signalrchat.js" />
+/// <reference path="chat/xsocketschat.js" />
+/// <reference path="xsockets.latest.min.js" />

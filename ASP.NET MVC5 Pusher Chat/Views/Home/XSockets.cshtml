@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "XSockets Chat";
+    ViewBag.HeroHeading = "Real-Time Chat";
+    ViewBag.HeroSubHeading = "With XSockets";
+}
+
+@section scripts {
+    <!--Script references. -->
+    <!--The jQuery library is required and is referenced by default in _Layout.cshtml. -->
+    <!--Reference the XSockets library. -->
+    <script src="~/Scripts/XSockets.latest.min.js"></script>
+    
+    <script src="~/Scripts/chat/AbstractChat.js"></script>
+    <script src="~/Scripts/chat/XSocketsChat.js"></script>
+    <script>
+        var chat = new XSocketsChat();
+    </script>
+}
+

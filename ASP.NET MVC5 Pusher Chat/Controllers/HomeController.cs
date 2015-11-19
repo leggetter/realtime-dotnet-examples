@@ -11,7 +11,12 @@ namespace ASP.NET_MVC5_Pusher_Chat.Controllers
 
         public ActionResult SignalR()
         {
-            return View("SignalR");
+            return View("SignalR", "_Chat");
+        }
+
+        public ActionResult XSockets()
+        {
+            return View("XSockets", "_Chat");
         }
     }
 }

@@ -13,78 +13,7 @@
 
 <body>
 
-    <div class="stripe no-padding-bottom numbered-stripe">
-        <div class="fixed wrapper">
-            <ol class="strong" start="1">
-                <li>
-                    <div class="hexagon"></div>
-                    <h2>
-                        <b>@ViewBag.HeroHeading</b>
-                        <small>@ViewBag.HeroSubHeading</small>
-                    </h2>
-                </li>
-            </ol>
-        </div>
-    </div>
-
-    <section class="main blue-gradient-background">
-        <div class="container">
-
-            <!-- Get Twitter Username -->
-            <div class="twitter-username-capture">
-                <p class="light white">
-                    Enter your Twitter name and start chatting!
-                </p>
-                <div class="twitter-input">
-                    <input id="input-name" class="swish-input" placeholder="Enter Twitter ID here">
-                    <button class="bright-blue-hover btn-white" id="try-it-out">Try it out</button>
-                </div>
-            </div>
-
-            <!-- Chat Application -->
-            <div class="row light-grey-blue-background chat-app">
-
-                <div id="messages">
-                    <div class="time-divide">
-                        <span class="date">Today</span>
-                    </div>
-                </div>
-
-                <div class="action-bar">
-                    <textarea class="input-message col-xs-10" placeholder="Your message"></textarea>
-                    <div class="option col-xs-1 white-background">
-                        <span class="fa fa-smile-o light-grey"></span>
-                    </div>
-                    <div class="option col-xs-1 green-background send-message">
-                        <span class="white light fa fa-paper-plane-o"></span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <script id="chat_message_template" type="text/template">
-        <div class="message">
-            <div class="avatar">
-                <img src="">
-            </div>
-            <div class="text-display">
-                <div class="message-data">
-                    <span class="author"></span>
-                    <span class="timestamp"></span>
-                    <span class="seen"></span>
-                </div>
-                <p class="message-body"></p>
-            </div>
-        </div>
-    </script>
-
     @RenderBody()
-
-    @Scripts.Render("~/bundles/scripts")
-    <script src="https://cdn.rawgit.com/samsonjs/strftime/master/strftime-min.js"></script>
-    @RenderSection("scripts", required: true)
 
 </body>
 

@@ -29,7 +29,7 @@ SignalRChat.prototype.fetchInitialMessages = function () {
  * If so, send the message to the server.
  */
 SignalRChat.prototype.sendMessage = function (data) {
-    this.hub.server.send(data.username, data.chat_text);
+    this.hub.server.send(data.username, data.text);
 };
 
 SignalRChat.prototype._addMessage = function (message) {
