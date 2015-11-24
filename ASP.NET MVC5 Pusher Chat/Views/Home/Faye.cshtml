@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Faye Chat";
+    ViewBag.HeroHeading = "Real-Time Chat";
+    ViewBag.HeroSubHeading = "With Faye";
+}
+
+@section scripts {
+    <!--Script references. -->
+    <!--The jQuery library is required and is referenced by default in _Layout.cshtml. -->
+    <!--Reference the Faye library. -->
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+
+    <script src="~/Scripts/chat/AbstractChat.js"></script>
+    <script src="~/Scripts/chat/FayeChat.js"></script>
+    <script>
+        var chat = new FayeChat();
+    </script>
+}

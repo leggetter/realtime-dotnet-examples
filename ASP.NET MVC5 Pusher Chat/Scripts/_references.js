@@ -10,3 +10,4 @@
 /// <reference path="chat/signalrchat.js" />
 /// <reference path="chat/xsocketschat.js" />
 /// <reference path="xsockets.latest.min.js" />
+/// <reference path="chat/pusherchat.js" />

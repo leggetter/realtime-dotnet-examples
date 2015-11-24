@@ -86,6 +86,14 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PusherServer, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PusherServer.3.0.0-rc2\lib\net35\PusherServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Serilog, Version=1.5.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.1.5.11\lib\net45\Serilog.dll</HintPath>
       <Private>True</Private>
@@ -284,6 +292,7 @@
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\chat\AbstractChat.js" />
+    <Content Include="Scripts\chat\PusherChat.js" />
     <Content Include="Scripts\chat\SignalRChat.js" />
     <Content Include="Scripts\chat\XSocketsChat.js" />
     <Content Include="Scripts\jquery-1.6.4.js" />
@@ -319,6 +328,8 @@
     <Content Include="Views\Home\SignalR.cshtml" />
     <Content Include="Views\Shared\_Chat.cshtml" />
     <Content Include="Views\Home\XSockets.cshtml" />
+    <Content Include="Views\Home\Faye.cshtml" />
+    <Content Include="Views\Home\Pusher.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
