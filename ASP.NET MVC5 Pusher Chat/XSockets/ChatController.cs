@@ -1,44 +1,38 @@
 ﻿using XSockets.Core.XSocket;
 using XSockets.Core.XSocket.Helpers;
-using XSockets.Core.Common.Socket.Event.Interface;
 using XSockets.Plugin.Framework.Attributes;
 using System.Threading.Tasks;
 using ASP.NET_MVC5_Pusher_Chat.Repos;
-using ASP.NET_MVC5_Pusher_Chat.Models;
-using System.Collections.Generic;
 
 namespace ASP.NET_MVC5_Pusher_Chat.XSockets
 {
-    [XSocketMetadata("chat")]
     public class ChatController : XSocketController
     {
+        public string Username { get; set; }
         private ChatRepository repo;
 
-        public ChatController(): base()
-        {
-            this.repo = new ChatRepository();
-        }
-
         /// <summary>
-        /// Get all existing messages
-        /// </summary>
-        /// <returns></returns>
-        public List<Message> GetAllMessages()
+        /// Set the username for the client (passed in with the connection).
+        /// Send all persisted messages to the connected client
+        /// </summary>        
+        public override async Task OnOpened()
         {
-            return this.repo.GetAll();
+
+            if (this.HasParameterKey("username"))
+            {
+                this.Username = this.GetParameter("username");
+            }
+            this.repo = new ChatRepository();
+            await this.Invoke(this.repo.GetAll(), "allmessages");
         }
 
         /// <summary>
         /// Persist the message and then send it to all connected clients.
         /// </summary>
-        /// <param name="message">The message being sent from one client</param>
-        /// <returns></returns>
-        public override async Task OnMessage(IMessage message)
+        public async Task ChatMessage(string text)
         {
-            Message messageModel = (Message)message.Data.Deserialize<Message>();
-
-            messageModel = this.repo.CreateMessage(messageModel);
-            await this.PublishToAll(messageModel, message.Topic);
+            var messageModel = this.repo.CreateMessage(this.Username, text);
+            await this.InvokeToAll(messageModel, "newmessage");
         }
     }
 }
