@@ -1,29 +1,28 @@
 ﻿function XSocketsChat() {
     AbstractChat.call(this);
 
-    var conn = new XSockets.WebSocket('ws://localhost:4502', ['chat']);
+    XSocketsChat.prototype._messageReceived = function (data) {
+        this.addMessage(data);
+    };
+
+    XSocketsChat.prototype.sendMessage = function (data) {
+        //Only send the text part, xsockets knows about the username already
+        this.controller.publish('chatmessage', { text: data.text }, this.sendMessageSuccess.bind(this));
+    };
+
+    var conn = new XSockets.WebSocket('ws://localhost:4502', ['chat'], {username:this.twitterUsername});
     this.controller = conn.controller('chat');
 
-    //Setup a subscription for the topic "chatmessage"
-    this.controller.subscribe('chatmessage', this._messageReceived.bind(this));
+    //When the controller sends out all persisted messages
+    this.controller.on('allmessages', function (messages) {
+        messages.forEach(function (message) {
+            XSocketsChat.prototype._messageReceived(message);
+        }.bind(this))
+    });
 
-    this.fetchInitialMessages();
+    //Setup a handler for the topic "newmessage"
+    this.controller.on('newmessage', this._messageReceived.bind(this));
 }
 extend(XSocketsChat).with(AbstractChat);
 
-XSocketsChat.prototype.fetchInitialMessages = function () {
-    this.controller.invoke('getallmessages')
-        .then(function (messages) {
-            messages.forEach(function (message) {
-                this._messageReceived(message);
-            }.bind(this));
-        }.bind(this));
-};
 
-XSocketsChat.prototype.sendMessage = function (data) {
-    this.controller.publish('chatmessage', data, this.sendMessageSuccess.bind(this));
-};
-
-XSocketsChat.prototype._messageReceived = function (data) {
-    this.addMessage(data);
-};

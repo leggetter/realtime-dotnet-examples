@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <ApplicationInsightsResourceId>/subscriptions/b39bd5d9-a9b2-46bb-b1fa-e85ab421adc6/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/MVC.Skeleton</ApplicationInsightsResourceId>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -175,56 +176,56 @@
       <Private>True</Private>
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
-    <Reference Include="XSockets.Controllers, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Server.5.0.2.1\lib\net45\XSockets.Controllers.dll</HintPath>
+    <Reference Include="XSockets.Controllers, Version=5.0.3.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Server.5.0.3-beta2\lib\net45\XSockets.Controllers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Core, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Core.dll</HintPath>
+    <Reference Include="XSockets.Core, Version=5.0.3.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.0.3-beta2\lib\net45\XSockets.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Core.Common, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Core.Common.dll</HintPath>
+    <Reference Include="XSockets.Core.Common, Version=5.0.3.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.0.3-beta2\lib\net45\XSockets.Core.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Core.Communication, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Server.5.0.2.1\lib\net45\XSockets.Core.Communication.dll</HintPath>
+    <Reference Include="XSockets.Core.Communication, Version=5.0.3.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Server.5.0.3-beta2\lib\net45\XSockets.Core.Communication.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Enterprise, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Server.5.0.2.1\lib\net45\XSockets.Enterprise.dll</HintPath>
+    <Reference Include="XSockets.Enterprise, Version=5.0.3.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Server.5.0.3-beta2\lib\net45\XSockets.Enterprise.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Logger, Version=5.0.2.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Server.5.0.2.1\lib\net45\XSockets.Logger.dll</HintPath>
+    <Reference Include="XSockets.Logger, Version=5.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Server.5.0.3-beta2\lib\net45\XSockets.Logger.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Plugin.Framework, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Plugin.Framework.5.0.2.1\lib\net45\XSockets.Plugin.Framework.dll</HintPath>
+    <Reference Include="XSockets.Plugin.Framework, Version=5.0.3.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Plugin.Framework.5.0.3-beta2\lib\net45\XSockets.Plugin.Framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Protocol, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Protocol.dll</HintPath>
+    <Reference Include="XSockets.Protocol, Version=5.0.3.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.0.3-beta2\lib\net45\XSockets.Protocol.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Protocol.Json, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Protocol.Json.dll</HintPath>
+    <Reference Include="XSockets.Protocol.Json, Version=5.0.3.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.0.3-beta2\lib\net45\XSockets.Protocol.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Protocol.Putty, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Protocol.Putty.dll</HintPath>
+    <Reference Include="XSockets.Protocol.Putty, Version=5.0.3.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.0.3-beta2\lib\net45\XSockets.Protocol.Putty.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Protocol.Rfc6455, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Protocol.Rfc6455.dll</HintPath>
+    <Reference Include="XSockets.Protocol.Rfc6455, Version=5.0.3.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.0.3-beta2\lib\net45\XSockets.Protocol.Rfc6455.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Serialization, Version=5.0.2.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Serialization.dll</HintPath>
+    <Reference Include="XSockets.Serialization, Version=5.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.0.3-beta2\lib\net45\XSockets.Serialization.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Server, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Server.5.0.2.1\lib\net45\XSockets.Server.dll</HintPath>
+    <Reference Include="XSockets.Server, Version=5.0.3.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Server.5.0.3-beta2\lib\net45\XSockets.Server.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -263,6 +264,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\ChatRepository.cs" />
     <Compile Include="XSockets\ChatController.cs" />
+    <Compile Include="XSockets\MyLogger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Chat.mdf" />
@@ -333,7 +335,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
