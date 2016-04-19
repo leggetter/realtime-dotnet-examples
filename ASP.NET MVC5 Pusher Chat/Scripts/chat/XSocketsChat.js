@@ -20,10 +20,10 @@ XSocketsChat.prototype.fetchInitialMessages = function () {
         }.bind(this));
 };
 
-XSocketsChat.prototype.sendMessage = function (data) {
-    this.controller.publish('chatmessage', data, this.sendMessageSuccess.bind(this));
-};
-
 XSocketsChat.prototype._messageReceived = function (data) {
     this.addMessage(data);
+};
+
+XSocketsChat.prototype.sendMessage = function (data) {
+    this.controller.publish('chatmessage', data, this.sendMessageSuccess.bind(this));
 };
