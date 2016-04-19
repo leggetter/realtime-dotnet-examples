@@ -1,5 +1,6 @@
 ﻿using Owin;
 using Microsoft.Owin;
+
 [assembly: OwinStartup(typeof(ASP.NET_MVC5_Pusher_Chat.App_Start.SignalRStartup))]
 namespace ASP.NET_MVC5_Pusher_Chat.App_Start
 {

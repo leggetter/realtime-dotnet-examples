@@ -23,26 +23,10 @@ namespace ASP.NET_MVC5_Pusher_Chat.Controllers
             return View("XSockets", "_Chat");
         }
 
-        public ActionResult Faye()
-        {
-            return View("Faye", "_Chat");
-        }
-
         public ActionResult Pusher()
         {
+            ViewBag.PusherKey = WebConfigurationManager.AppSettings["PusherAppKey"];
             return View("Pusher", "_Chat");
-        }
-
-        [HttpPost]
-        public ActionResult Message()
-        {
-            var repo = new ChatRepository();
-
-            var text = Request.Form["text"];
-            var username = Request.Form["username"];
-
-            var message = repo.CreateMessage(username, text);
-            return Json(message);
         }
 
         [HttpGet, OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]

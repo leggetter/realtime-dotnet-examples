@@ -1,7 +1,7 @@
-﻿function PusherChat() {
+﻿function PusherChat(key) {
     AbstractChat.call(this);
 
-    var pusher = new Pusher('0b2f668ffd067365b2c8');
+    var pusher = new Pusher(key);
     this.channel = pusher.subscribe('chat');
 
     this.channel.bind('pusher:subscription_succeeded', this.fetchInitialMessages.bind(this));
