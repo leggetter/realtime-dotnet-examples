@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNet.SignalR;
-using ASP.NET_MVC5_Pusher_Chat.Models;
-using ASP.NET_MVC5_Pusher_Chat.Repos;
+using ASP.NET_MVC5_Realtime_Chat.Models;
+using ASP.NET_MVC5_Realtime_Chat.Repos;
 
-namespace ASP.NET_MVC5_Pusher_Chat.Hubs
+namespace ASP.NET_MVC5_Realtime_Chat.Hubs
 {
     public class ChatHub : Hub
     {

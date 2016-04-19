@@ -2,7 +2,7 @@
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace ASP.NET_MVC5_Pusher_Chat
+namespace ASP.NET_MVC5_Realtime_Chat
 {
     public class MvcApplication : System.Web.HttpApplication
     {

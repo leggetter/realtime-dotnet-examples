@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ASP.NET_MVC5_Pusher_Chat.Models
+namespace ASP.NET_MVC5_Realtime_Chat.Models
 {
     using System;
     using System.Data.Entity;

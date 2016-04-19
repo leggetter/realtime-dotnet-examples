@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace ASP.NET_MVC5_Pusher_Chat
+namespace ASP.NET_MVC5_Realtime_Chat
 {
     public class BundleConfig
     {

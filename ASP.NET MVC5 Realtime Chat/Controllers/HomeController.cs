@@ -1,10 +1,10 @@
-﻿using ASP.NET_MVC5_Pusher_Chat.Repos;
+﻿using ASP.NET_MVC5_Realtime_Chat.Repos;
 using PusherServer;
 using System.Configuration;
 using System.Web.Configuration;
 using System.Web.Mvc;
 
-namespace ASP.NET_MVC5_Pusher_Chat.Controllers
+namespace ASP.NET_MVC5_Realtime_Chat.Controllers
 {
     public class HomeController : Controller
     {

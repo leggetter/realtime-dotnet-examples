@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace ASP.NET_MVC5_Pusher_Chat
+namespace ASP.NET_MVC5_Realtime_Chat
 {
     public class RouteConfig
     {

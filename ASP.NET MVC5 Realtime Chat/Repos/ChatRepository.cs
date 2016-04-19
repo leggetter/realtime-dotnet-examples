@@ -1,10 +1,10 @@
-﻿using ASP.NET_MVC5_Pusher_Chat.Models;
+﻿using ASP.NET_MVC5_Realtime_Chat.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ASP.NET_MVC5_Pusher_Chat.Repos
+namespace ASP.NET_MVC5_Realtime_Chat.Repos
 {
     public class ChatRepository
     {

@@ -3,11 +3,11 @@ using XSockets.Core.XSocket.Helpers;
 using XSockets.Core.Common.Socket.Event.Interface;
 using XSockets.Plugin.Framework.Attributes;
 using System.Threading.Tasks;
-using ASP.NET_MVC5_Pusher_Chat.Repos;
-using ASP.NET_MVC5_Pusher_Chat.Models;
+using ASP.NET_MVC5_Realtime_Chat.Repos;
+using ASP.NET_MVC5_Realtime_Chat.Models;
 using System.Collections.Generic;
 
-namespace ASP.NET_MVC5_Pusher_Chat.XSockets
+namespace ASP.NET_MVC5_Realtime_Chat.XSockets
 {
     [XSocketMetadata("chat")]
     public class ChatController : XSocketController

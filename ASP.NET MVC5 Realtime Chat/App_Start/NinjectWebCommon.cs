@@ -1,7 +1,7 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(ASP.NET_MVC5_Pusher_Chat.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(ASP.NET_MVC5_Pusher_Chat.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(ASP.NET_MVC5_Realtime_Chat.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(ASP.NET_MVC5_Realtime_Chat.App_Start.NinjectWebCommon), "Stop")]
 
-namespace ASP.NET_MVC5_Pusher_Chat.App_Start
+namespace ASP.NET_MVC5_Realtime_Chat.App_Start
 {
     using MCV.Skeleton.Infrastructure;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
