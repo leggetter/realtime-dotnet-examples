@@ -38,7 +38,7 @@ namespace ASP.NET_MVC5_Realtime_Chat.XSockets
             Message messageModel = (Message)message.Data.Deserialize<Message>();
 
             messageModel = this.repo.CreateMessage(messageModel);
-            await this.PublishToAll(messageModel, message.Topic);
+            await this.PublishToAll(messageModel, "chatmessage");
         }
     }
 }
