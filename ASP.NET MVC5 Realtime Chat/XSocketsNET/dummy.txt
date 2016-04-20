@@ -1,0 +1,4 @@
+﻿Just a file included in the XSockets.ItemTemplates package. 
+Included so that the Install.ps1 will run.
+
+Feel free to delete me :)

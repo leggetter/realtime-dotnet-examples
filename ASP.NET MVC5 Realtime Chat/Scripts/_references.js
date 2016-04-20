@@ -11,3 +11,5 @@
 /// <reference path="chat/xsocketschat.js" />
 /// <reference path="xsockets.latest.min.js" />
 /// <reference path="chat/pusherchat.js" />
+/// <reference path="jquery-2.2.3.js" />
+/// <reference path="bootstrap.min.js" />
