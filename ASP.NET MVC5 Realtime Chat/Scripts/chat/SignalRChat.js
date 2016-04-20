@@ -45,9 +45,8 @@ SignalRChat.prototype.fetchInitialMessages = function () {
  * Send message over SignalR.
  */
 SignalRChat.prototype.sendMessage = function (data) {
-    var self = this;
-    self.chatHub.server.send(data.username, data.text)
-        .done(self.sendMessageSuccess)
+    this.chatHub.server.send(data.username, data.text)
+        .done(this.sendMessageSuccess.bind(this))
         .fail(function(error) {
             console.error(error);
         });
