@@ -52,6 +52,8 @@ namespace ASP.NET_MVC5_Realtime_Chat.Controllers
 
             var message = repo.CreateMessage(username, text);
 
+            // Channel, event, data payload - evented PubSub
+            // Library deals with serialising `message` object
             pusher.Trigger("chat", "chatmessage", message);
 
             return Json(message);
