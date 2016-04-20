@@ -8,12 +8,14 @@
     // Add a `newMessage` function to the client part of the hub
     // This defines this function and means the server can call
     // it on the client.
-    this.chatHub.client.newMessage = this._addMessage.bind(this);
+    this.chatHub.client.newMessage = this.addMessage.bind(this);
 
     // Start the connection to the hub.
     $.connection.hub.start().done(function () {
+
         // when succeeded, fetch any stored messages.
         this.fetchInitialMessages();
+
     }.bind(this));
 }
 extend(SignalRChat).with(AbstractChat);
@@ -22,7 +24,7 @@ extend(SignalRChat).with(AbstractChat);
  * Get all existing messages.
  */
 SignalRChat.prototype.fetchInitialMessages = function () {
-    // getAll Promise
+    // RMI - returns Promise
     var getAll = this.chatHub.server.getAll();
 
     getAll.then(function (messages) {
@@ -31,19 +33,12 @@ SignalRChat.prototype.fetchInitialMessages = function () {
         messages.forEach(function (message) {
 
             // Add to the UI
-            this._addMessage(message);
+            this.addMessage(message);
 
         }, this);
     }.bind(this)).fail(function(e) {
         console.error(e);
     });
-};
-
-/**
- * Add message to the UI
- */
-SignalRChat.prototype._addMessage = function (message) {
-    this.addMessage(message);
 };
 
 /**
