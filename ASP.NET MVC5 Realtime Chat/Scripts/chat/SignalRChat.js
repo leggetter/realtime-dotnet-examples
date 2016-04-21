@@ -43,6 +43,9 @@ SignalRChat.prototype.fetchInitialMessages = function () {
 
 /**
  * Send message over SignalR.
+ *
+ * Called by AbstractChat when user interacts with
+ * UI in order to send a messages to other users.
  */
 SignalRChat.prototype.sendMessage = function (data) {
     this.chatHub.server.send(data.username, data.text)
