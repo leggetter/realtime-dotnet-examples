@@ -1,2 +1,34 @@
-# realtime-dotnet-examples
-Examples of real-time frameworks that you can use when building an ASP.NET application
+# Real-Time .NET Examples
+
+Examples of real-time frameworks that you can use when building an ASP.NET applications.
+The example application is a real-time chat app.
+
+The frameworks in the examples are:
+
+* [SignalR](http://www.asp.net/signalr)
+* [XSockets](https://xsockets.net/)
+* [Pusher](https://pusher.com)
+
+## Prerequisites
+
+* Visual Studio 2013
+* .NET Framework 4.5
+* For the Pusher demo you will require a set of Pusher credentials
+
+## Getting Started
+
+Open `ASP.NET MVC5 Realtime Chat.sln` in Visual Studio, run the project and a web page should open showing links to all the examples. It's suggested that you open two windows side-by-side to see each demo in action. Of course, you have to be running the same example in both windows in order to see the real-time updates.
+
+## Contribution
+
+Bug fixes and generally improvements also appreciated but I'd very much appreciate contribution to demonstrate [using other real-time solutions and frameworks](https://github.com/leggetter/realtime-dotnet-examples/issues?q=is%3Aopen+is%3Aissue+label%3Aframework).
+
+Please see the [full list of issues](https://github.com/leggetter/realtime-dotnet-examples/issues) and see if you can help there too.
+
+I am trying to make sure that PubSub, Evented PubSub and RMI/RPC are demonstrated within the examples. So please consider this before updating an example to use a different communication pattern.
+
+When contributing please try not make large changes to keep commits focused.
+
+## License
+
+MIT - See [LICENSE](LICENSE)
