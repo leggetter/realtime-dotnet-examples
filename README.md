@@ -1,13 +1,19 @@
 # Real-Time .NET Examples
 
 Examples of real-time frameworks that you can use when building an ASP.NET applications.
-The example application is a real-time chat app.
+
+The example applications in this repo are real-time chat apps.
 
 The frameworks in the examples are:
 
 * [SignalR](http://www.asp.net/signalr)
 * [XSockets](https://xsockets.net/)
 * [Pusher](https://pusher.com)
+
+Samples were written for a talk on **Real-Time Web Apps & .NET - What are Your Options?**
+
+* [Slides](https://leggetter.github.io/realtime-dotnet)
+* [Slide source](https://github.com/leggetter/realtime-dotnet)
 
 ## Prerequisites
 
