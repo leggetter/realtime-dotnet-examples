@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace ASP.NET_MVC5_Realtime_Chat.Controllers
 {
-    public class HomeController : Controller
+    public class ChatController : Controller
     {
         public ActionResult Index()
         {

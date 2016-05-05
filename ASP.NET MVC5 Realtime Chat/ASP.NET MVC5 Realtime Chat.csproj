@@ -240,7 +240,7 @@
     <Compile Include="App_Start\SignalRStartup.cs" />
     <Compile Include="App_Start\XSocketsStartup.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -346,14 +346,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Views\Error\Http404.cshtml" />
-    <Content Include="Views\Home\SignalR.cshtml" />
+    <Content Include="Views\Chat\SignalR.cshtml" />
     <Content Include="Views\Shared\_Chat.cshtml" />
-    <Content Include="Views\Home\XSockets.cshtml" />
-    <Content Include="Views\Home\Faye.cshtml" />
-    <Content Include="Views\Home\Pusher.cshtml" />
+    <Content Include="Views\Chat\XSockets.cshtml" />
+    <Content Include="Views\Chat\Faye.cshtml" />
+    <Content Include="Views\Chat\Pusher.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
