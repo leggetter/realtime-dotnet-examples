@@ -17,7 +17,7 @@ extend(PusherChat).with(AbstractChat);
 
 PusherChat.prototype.fetchInitialMessages = function () {
     // Standard AJAX GET to get initial messages
-    $.get('/Home/Messages', function (messages) {
+    $.get('/Chat/Messages', function (messages) {
 
         // Loop and add to UI
         messages.forEach(function (message) {
@@ -29,7 +29,7 @@ PusherChat.prototype.fetchInitialMessages = function () {
 
 // Make HTTP POST request to controller
 PusherChat.prototype.sendMessage = function (data) {
-    $.post('/Home/PusherMessage', data)
+    $.post('/Chat/PusherMessage', data)
         .success(this.sendMessageSuccess.bind(this));
 };
 

@@ -17,7 +17,7 @@ Samples were written for a talk on **Real-Time Web Apps & .NET - What are Your O
 
 ## Prerequisites
 
-* Visual Studio 2013
+* Visual Studio 2015
 * .NET Framework 4.5
 * For the Pusher demo you will require a set of Pusher credentials
 

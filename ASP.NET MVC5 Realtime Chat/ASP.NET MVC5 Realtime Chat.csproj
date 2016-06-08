@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <ApplicationInsightsResourceId>/subscriptions/b39bd5d9-a9b2-46bb-b1fa-e85ab421adc6/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/MVC.Skeleton</ApplicationInsightsResourceId>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -239,7 +240,7 @@
     <Compile Include="App_Start\SignalRStartup.cs" />
     <Compile Include="App_Start\XSocketsStartup.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -288,29 +289,29 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
-    <None Include="Scripts\jquery-2.2.3-vsdoc.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-2.2.3.js" />
-    <Content Include="Scripts\jquery-2.2.3.min.js" />
-    <Content Include="XSocketsNET\dummy.txt" />
     <EntityDeploy Include="Models\MessageModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MessageModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="Models\MessageModel.edmx.diagram">
+      <DependentUpon>MessageModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-2.2.3-vsdoc.js" />
     <Content Include="Models\MessageModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MessageModel.edmx</DependentUpon>
       <LastGenOutput>MessageModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\MessageModel.edmx.diagram">
-      <DependentUpon>MessageModel.edmx</DependentUpon>
     </Content>
     <Content Include="Models\MessageModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MessageModel.edmx</DependentUpon>
       <LastGenOutput>MessageModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.2.3.js" />
+    <Content Include="Scripts\jquery-2.2.3.min.js" />
+    <Content Include="XSocketsNET\dummy.txt" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\chat\AbstractChat.js" />
@@ -345,14 +346,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Views\Error\Http404.cshtml" />
-    <Content Include="Views\Home\SignalR.cshtml" />
+    <Content Include="Views\Chat\SignalR.cshtml" />
     <Content Include="Views\Shared\_Chat.cshtml" />
-    <Content Include="Views\Home\XSockets.cshtml" />
-    <Content Include="Views\Home\Faye.cshtml" />
-    <Content Include="Views\Home\Pusher.cshtml" />
+    <Content Include="Views\Chat\XSockets.cshtml" />
+    <Content Include="Views\Chat\Faye.cshtml" />
+    <Content Include="Views\Chat\Pusher.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
