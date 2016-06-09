@@ -8,6 +8,7 @@ The frameworks in the examples are:
 
 * [SignalR](http://www.asp.net/signalr)
 * [XSockets](https://xsockets.net/)
+* [PubNub](https://www.pubnub.com)
 * [Pusher](https://pusher.com)
 
 Samples were written for a talk on **Real-Time Web Apps & .NET - What are Your Options?**
