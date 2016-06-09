@@ -98,6 +98,10 @@
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PubNub-Messaging, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pubnub.3.7.5.0\lib\net40\PubNub-Messaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PusherServer, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\PusherServer.3.0.0\lib\net35\PusherServer.dll</HintPath>
       <Private>True</Private>
@@ -251,6 +255,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SignalRStartup.cs" />
     <Compile Include="App_Start\XSocketsStartup.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Global.asax.cs">
@@ -326,6 +331,7 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\chat\PubNubChat.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
@@ -372,6 +378,7 @@
     <Content Include="Views\Chat\XSockets.cshtml" />
     <Content Include="Views\Chat\Faye.cshtml" />
     <Content Include="Views\Chat\Pusher.cshtml" />
+    <Content Include="Views\Chat\PubNub.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

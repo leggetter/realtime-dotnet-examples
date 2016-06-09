@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "PubNub Chat";
+    ViewBag.HeroHeading = "Real-Time Chat";
+    ViewBag.HeroSubHeading = "With PubNub";
+}
+
+@section scripts {
+    <!--Script references. -->
+    <!--The jQuery library is required and is referenced by default in _Layout.cshtml. -->
+    <script src="//cdn.pubnub.com/pubnub-3.14.7.js"></script>
+
+    <script src="~/Scripts/chat/AbstractChat.js"></script>
+    <script src="~/Scripts/chat/PubNubChat.js"></script>
+    <script>
+        var chat = new PubNubChat('@ViewBag.PubNubPublishKey', '@ViewBag.PubNubSubscribeKey');
+    </script>
+}

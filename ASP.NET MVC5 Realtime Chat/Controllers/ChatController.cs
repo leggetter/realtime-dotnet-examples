@@ -1,4 +1,5 @@
 ﻿using ASP.NET_MVC5_Realtime_Chat.Repos;
+using PubNubMessaging.Core;
 using PusherServer;
 using System.Configuration;
 using System.Net;
@@ -26,7 +27,7 @@ namespace ASP.NET_MVC5_Realtime_Chat.Controllers
 
         public ActionResult Pusher()
         {
-            ViewBag.PusherKey = WebConfigurationManager.AppSettings["PusherAppKey"];
+            ViewBag.PusherKey = Config.PusherAppKey;
             return View("Pusher", "_Chat");
         }
 
@@ -43,9 +44,9 @@ namespace ASP.NET_MVC5_Realtime_Chat.Controllers
         {
             var repo = new ChatRepository();
             var pusher = new Pusher(
-                WebConfigurationManager.AppSettings["PusherAppId"],
-                WebConfigurationManager.AppSettings["PusherAppKey"],
-                WebConfigurationManager.AppSettings["PusherAppSecret"]
+                Config.PusherAppId,
+                Config.PusherAppKey,
+                Config.PusherAppSecret
                 );
 
             var text = Request.Form["text"];
@@ -66,15 +67,66 @@ namespace ASP.NET_MVC5_Realtime_Chat.Controllers
             var fromNumber = Request["msisdn"];
             var text = Request["text"];
 
-            var repo = new PhoneNumberRepository();
-            if (!repo.NumberExists(fromNumber))
+            var phoneRepo = new PhoneNumberRepository();
+            if (!phoneRepo.NumberExists(fromNumber))
             {
-                repo.Create(new Models.PhoneNumber() { number = fromNumber });
+                phoneRepo.Create(new Models.PhoneNumber() { number = fromNumber });
             }
 
-            // TODO: publish to chat app via hosted service
+            var chatRepo = new ChatRepository();
+            var message = chatRepo.CreateMessage(fromNumber, text);
+
+            Pubnub pubnub = new Pubnub(
+                Config.PubNubPublishKey,
+                Config.PubNubSubscribeKey
+            );
+            pubnub.Publish(
+                "chat",
+                message,
+                (string result) => { },
+                (PubnubClientError e) => { }
+            );
 
             return new HttpStatusCodeResult(HttpStatusCode.OK);
+        }
+
+
+        public ActionResult PubNub()
+        {
+            ViewBag.PubNubPublishKey = Config.PubNubPublishKey;
+            ViewBag.PubNubSubscribeKey = Config.PubNubSubscribeKey;
+            return View("PubNub", "_Chat");
+        }
+
+        [HttpPost]
+        public ActionResult PubNubMessage()
+        {
+            var repo = new ChatRepository();
+            var pusher = new Pusher(
+                Config.PusherAppId,
+                Config.PusherAppKey,
+                Config.PusherAppSecret
+                );
+
+            var text = Request.Form["text"];
+            var username = Request.Form["username"];
+
+            var message = repo.CreateMessage(username, text);
+
+            // Channel, event, data payload - evented PubSub
+            // Library deals with serialising `message` object
+            Pubnub pubnub = new Pubnub(
+                Config.PubNubPublishKey,
+                Config.PubNubSubscribeKey
+            );
+            pubnub.Publish(
+                "chat",
+                message,
+                (string result) => { },
+                (PubnubClientError e) => { }
+            );
+
+            return Json(message);
         }
     }
 }
