@@ -6,6 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="c8e5b1aa61f84495924e9cce223a0c15" Name="Diagram1">
         <EntityTypeShape EntityType="ChatModel.Message" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChatModel.PhoneNumber" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
