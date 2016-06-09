@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ASP.NET_MVC5_Realtime_Chat</RootNamespace>
     <AssemblyName>ASP.NET MVC5 Realtime Chat</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -22,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <ApplicationInsightsResourceId>/subscriptions/b39bd5d9-a9b2-46bb-b1fa-e85ab421adc6/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/MVC.Skeleton</ApplicationInsightsResourceId>
     <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,6 +79,10 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Nexmo.Api, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nexmo.Csharp.Client.1.0.0\lib\net452\Nexmo.Api.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
@@ -111,6 +116,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -123,8 +129,7 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -157,9 +162,7 @@
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -171,6 +174,7 @@
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.1.0\lib\net40\WebActivatorEx.dll</HintPath>
       <Private>True</Private>
@@ -179,56 +183,64 @@
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Controllers, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Server.5.0.2.1\lib\net45\XSockets.Controllers.dll</HintPath>
+    <Reference Include="XSockets.Controllers, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Server.5.1.2\lib\net45\XSockets.Controllers.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Core, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Core.dll</HintPath>
+    <Reference Include="XSockets.Core, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.1.2\lib\net45\XSockets.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Core.Common, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Core.Common.dll</HintPath>
+    <Reference Include="XSockets.Core.Common, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.1.2\lib\net45\XSockets.Core.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Core.Communication, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Server.5.0.2.1\lib\net45\XSockets.Core.Communication.dll</HintPath>
+    <Reference Include="XSockets.Core.Communication, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Server.5.1.2\lib\net45\XSockets.Core.Communication.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Enterprise, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Server.5.0.2.1\lib\net45\XSockets.Enterprise.dll</HintPath>
+    <Reference Include="XSockets.Enterprise, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Server.5.1.2\lib\net45\XSockets.Enterprise.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Logger, Version=5.0.2.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Server.5.0.2.1\lib\net45\XSockets.Logger.dll</HintPath>
+    <Reference Include="XSockets.Logger, Version=5.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Server.5.1.2\lib\net45\XSockets.Logger.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Plugin.Framework, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Plugin.Framework.5.0.2.1\lib\net45\XSockets.Plugin.Framework.dll</HintPath>
+    <Reference Include="XSockets.Plugin.Framework, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Plugin.Framework.5.1.2\lib\net45\XSockets.Plugin.Framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Protocol, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Protocol.dll</HintPath>
+    <Reference Include="XSockets.Protocol, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.1.2\lib\net45\XSockets.Protocol.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Protocol.Json, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Protocol.Json.dll</HintPath>
+    <Reference Include="XSockets.Protocol.ControllerProxy, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.1.2\lib\net45\XSockets.Protocol.ControllerProxy.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Protocol.Putty, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Protocol.Putty.dll</HintPath>
+    <Reference Include="XSockets.Protocol.Json, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.1.2\lib\net45\XSockets.Protocol.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Protocol.Rfc6455, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Protocol.Rfc6455.dll</HintPath>
+    <Reference Include="XSockets.Protocol.Putty, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.1.2\lib\net45\XSockets.Protocol.Putty.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Serialization, Version=5.0.2.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Core.5.0.2.1\lib\net45\XSockets.Serialization.dll</HintPath>
+    <Reference Include="XSockets.Protocol.Rfc6455, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.1.2\lib\net45\XSockets.Protocol.Rfc6455.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="XSockets.Server, Version=5.0.2.1, Culture=neutral, PublicKeyToken=a28417cc6b96481d, processorArchitecture=MSIL">
-      <HintPath>..\packages\XSockets.Server.5.0.2.1\lib\net45\XSockets.Server.dll</HintPath>
+    <Reference Include="XSockets.Protocol.Rfc6455Native, Version=5.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.1.2\lib\net45\XSockets.Protocol.Rfc6455Native.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XSockets.Serialization, Version=5.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Core.5.1.2\lib\net45\XSockets.Serialization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="XSockets.Server, Version=5.1.2.0, Culture=neutral, PublicKeyToken=d483b184a4a255e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\XSockets.Server.5.1.2\lib\net45\XSockets.Server.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -264,8 +276,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MessageModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\PhoneNumber.cs">
+      <DependentUpon>MessageModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\ChatRepository.cs" />
+    <Compile Include="Repos\PhoneNumberRepository.cs" />
     <Compile Include="XSockets\ChatController.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +318,7 @@
       <DependentUpon>MessageModel.edmx</DependentUpon>
       <LastGenOutput>MessageModel.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\MessageModel.edmx.sql" />
     <Content Include="Models\MessageModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MessageModel.edmx</DependentUpon>
@@ -311,7 +328,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />
-    <Content Include="XSocketsNET\dummy.txt" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
     <Content Include="Scripts\chat\AbstractChat.js" />
@@ -335,7 +351,9 @@
     <Content Include="Scripts\XSockets.latest.js" />
     <Content Include="Scripts\XSockets.latest.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -357,7 +375,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

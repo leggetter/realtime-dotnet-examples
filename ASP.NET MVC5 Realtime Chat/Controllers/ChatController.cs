@@ -1,6 +1,7 @@
 ﻿using ASP.NET_MVC5_Realtime_Chat.Repos;
 using PusherServer;
 using System.Configuration;
+using System.Net;
 using System.Web.Configuration;
 using System.Web.Mvc;
 
@@ -57,6 +58,23 @@ namespace ASP.NET_MVC5_Realtime_Chat.Controllers
             pusher.Trigger("chat", "chatmessage", message);
 
             return Json(message);
+        }
+
+        public ActionResult NexmoInboundSMS()
+        {
+            // fromNumber/msisdn, to, text
+            var fromNumber = Request["msisdn"];
+            var text = Request["text"];
+
+            var repo = new PhoneNumberRepository();
+            if (!repo.NumberExists(fromNumber))
+            {
+                repo.Create(new Models.PhoneNumber() { number = fromNumber });
+            }
+
+            // TODO: publish to chat app via hosted service
+
+            return new HttpStatusCodeResult(HttpStatusCode.OK);
         }
     }
 }

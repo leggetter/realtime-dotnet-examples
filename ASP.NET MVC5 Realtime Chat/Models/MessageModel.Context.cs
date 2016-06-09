@@ -26,5 +26,6 @@ namespace ASP.NET_MVC5_Realtime_Chat.Models
         }
     
         public virtual DbSet<Message> Messages { get; set; }
+        public virtual DbSet<PhoneNumber> PhoneNumbers { get; set; }
     }
 }
