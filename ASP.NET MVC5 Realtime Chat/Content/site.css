@@ -52,3 +52,7 @@ textarea {
 .twitter-input {
   margin-top: 20px;
 }
+
+.input-message {
+    overflow-x: hidden;
+}

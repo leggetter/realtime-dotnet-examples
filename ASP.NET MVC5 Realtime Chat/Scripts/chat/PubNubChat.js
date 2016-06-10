@@ -37,7 +37,12 @@ PubNubChat.prototype.sendMessage = function (data) {
 };
 
 PubNubChat.prototype._messageReceived = function (data) {
-    // TODO: check if the username
+    // Hacky check to see if the username is a phone number
+    if (/\d{3,}/.test(data.username)) {
+        // phone number
+        data.text = '...' + data.username.substr(-4) + ': ' + data.text;
+        data.username = "nexmo";
+    }
 
     // Work around strange DateTime serialisation
     // http://stackoverflow.com/a/726869/39904

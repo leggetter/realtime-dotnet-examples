@@ -3,6 +3,8 @@ using PubNubMessaging.Core;
 using PusherServer;
 using System.Net;
 using System.Web.Mvc;
+using ASP.NET_MVC5_Realtime_Chat.Models;
+using System;
 
 namespace ASP.NET_MVC5_Realtime_Chat.Controllers
 {
@@ -83,9 +85,25 @@ namespace ASP.NET_MVC5_Realtime_Chat.Controllers
                 (PubnubClientError e) => { }
             );
 
+            //SendViaSMS(message);
+
             return Json(message);
         }
         #endregion
+
+        private void SendViaSMS(Message message)
+        {
+            var phoneRepo = new PhoneNumberRepository();
+            foreach(var number in phoneRepo.GetAll())
+            {
+                Nexmo.Api.SMS.Send(new Nexmo.Api.SMS.SMSRequest()
+                {
+                    from = "4759442769",
+                    to = number.number,
+                    body = message.text + "[via nexmo.com]"
+                });
+            }
+        }
 
         [HttpGet, OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public ActionResult Messages()
